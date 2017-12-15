@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping package="com.shop.entity">
+	<class name="Category" table="sys_category">
+		<id name="id" column="id">
+			<generator class="identity"></generator>
+		</id>
+		<property name="name" column="name" length="20"/>
+		<set name="seconds" inverse="true" lazy="false">
+			<key column="categoryId"></key>
+			<one-to-many class="com.shop.entity.CategorySecond"/>
+		</set>
+	</class>
+</hibernate-mapping>

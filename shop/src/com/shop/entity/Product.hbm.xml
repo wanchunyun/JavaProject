@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping package="com.shop.entity">
+	<class name="Product" table="sys_product">
+		<id name="id" column="id">
+			<generator class="identity"></generator>
+		</id>
+		<property name="title" column="title" length="40"/>
+		<property name="desc" column="desc_" length="200"/>
+		<property name="img" column="img" length="200"/>
+		<property name="priceMarket" column="price_market" scale="2"/>
+		<property name="priceShop" column="price_shop" scale="2"/>
+		<property name="hot" column="hot"/>
+		<many-to-one name="categorySecond" column="cs_id"></many-to-one>
+	</class>
+</hibernate-mapping>

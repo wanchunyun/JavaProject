@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 字符集  -->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<!--当struts.xml配置文件修改后，系统是否重新加载该文件，开发阶段打开此功能  -->
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<!-- struts2生成的表单标签使用默认的主题，即不附加格式化标签 -->
+	<constant name="struts.ui.theme" value="simple" />
+	<!-- 告诉struts action类去spring容器里面去取 -->
+	<constant name="struts.objectFactory" value="spring" />
+	<!-- 上传临时路径 -->
+	<constant name="struts.multipart.saveDir" value="/upload"/> 
+	<!-- 访问后缀 -->
+	<constant name="struts.action.extension" value="do,action,html,"/> 
+	
+	<!--管理员管理  -->
+    <package name="adminIndex" namespace="/admin" extends="struts-default">
+        <action name="*" class="adminIndexAction" method="{1}">
+        	<result name="url">/WEB-INF/${url}</result>
+        </action>
+    </package>
+	<!--用户管理  -->
+    <package name="adminUser" namespace="/adminUser" extends="struts-default">
+        <action name="*" class="adminUserAction" method="{1}">
+        	<result name="url">/WEB-INF/${url}</result>
+        </action>
+    </package>
+	<!--一级分类管理  -->
+    <package name="category" namespace="/category" extends="struts-default">
+        <action name="*" class="categoryAction" method="{1}">
+        	<result name="url">/WEB-INF/${url}</result>
+        </action>
+    </package>
+	<!--二级分类管理  -->
+    <package name="categorySecond" namespace="/categorySecond" extends="struts-default">
+        <action name="*" class="categorySecondAction" method="{1}">
+        	<result name="url">/WEB-INF/${url}</result>
+        </action>
+    </package>
+	<!--产品管理  -->
+    <package name="product" namespace="/product" extends="struts-default">
+        <action name="*" class="productAction" method="{1}">
+        	<result name="url">/WEB-INF/${url}</result>
+        </action>
+    </package>
+	<!--订单管理  -->
+    <package name="order" namespace="/order" extends="struts-default">
+        <action name="*" class="orderAction" method="{1}">
+        	<result name="url">/WEB-INF/${url}</result>
+        </action>
+    </package>
+	<!--关于我们管理  -->
+    <package name="about" namespace="/about" extends="struts-default">
+        <action name="*" class="aboutAction" method="{1}">
+        	<result name="url">/WEB-INF/${url}</result>
+        </action>
+    </package>
+	<!--用户页面管理  -->
+    <package name="index" extends="struts-default">
+        <action name="*" class="indexAction" method="{1}">
+        	<result name="url">/WEB-INF/${url}</result>
+        </action>
+    </package>
+</struts>

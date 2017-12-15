@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping package="com.shop.entity">
+	<class name="OrderItem" table="sys_order_item">
+		<id name="id" column="id">
+			<generator class="identity"></generator>
+		</id>
+		<property name="pid" column="pid"/>
+		<property name="title" column="title" length="20"/>
+		<property name="img" column="img" length="200"/>
+		<property name="price" column="price" scale="2"/>
+		<property name="count" column="count"/>
+		<many-to-one name="order" column="orderId"></many-to-one>
+	</class>
+</hibernate-mapping>
